@@ -80,7 +80,7 @@ async def ping():
     return "pong"
 
 
-@app.post("will-annotate-document/{username}/{password}", status_code=204)
+@app.post("/will-annotate-document/{username}/{password}", status_code=204)
 async def will_annotate_document(
         username: str,
         password: str,
