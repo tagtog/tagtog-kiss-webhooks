@@ -20,4 +20,12 @@ pipenv sync
 
 ```shell
 uvicorn main:app --reload
+# The application will be running on: http://localhost:8000
 ```
+
+# Endpoints
+
+The application will run:
+
+* http://localhost:8000/will-annotate-document/{username}/{password}
+  Where `{username}` and `{password}` are the credentials of the tagtog user making the request. For example, these can be the credentials of the project's owner.
