@@ -45,7 +45,7 @@ def return_empty_annotations():
         "anncomplete": False,
         "annotatables": [],
         "sources": [],
-        "metas": [],
+        "metas": {},
         "entities": [],
         "relations": []
     }
