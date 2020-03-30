@@ -51,9 +51,9 @@ def return_empty_annotations():
     }
 
 
-async def success_async_annotate(info: Info):
+async def success_async_annotate(username: str, password: str, info: Info):
     logger.info(f"started annotation: {info}")
-    await asyncio.sleep(1)  # Wait some time to simulate a real ML prediction
+    await asyncio.sleep(5)  # Wait some time to simulate a real ML prediction
     endpoint = "-api/documents/jobs/v1/success-async-annotate"
 
     res = requests.post(
@@ -67,8 +67,8 @@ async def success_async_annotate(info: Info):
     logger.info("finished")
 
 
-async def async_annotate(info: Info):
-    await success_async_annotate(info)
+async def async_annotate(username: str, password: str, info: Info):
+    await success_async_annotate(username, password, info)
 
 
 # -----------------------------------------------------------------------------
@@ -80,14 +80,19 @@ async def ping():
     return "pong"
 
 
-@app.post("/will-annotate-document", status_code=204)
-async def will_annotate_document(x_tagtog_webhookid: str = Header(None),
-                                 x_tagtog_source: str = Header(None),
-                                 x_tagtog_owner: str = Header(None),
-                                 x_tagtog_project: str = Header(None),
-                                 x_tagtog_member: str = Header(""),
-                                 x_tagtog_docid: str = Header(None),
-                                 x_tagtog_jobid: str = Header(None)):
+@app.post("will-annotate-document/{username}/{password}", status_code=204)
+async def will_annotate_document(
+        username: str,
+        password: str,
+        x_tagtog_webhookid: str = Header(None),
+        x_tagtog_source: str = Header(None),
+        x_tagtog_owner: str = Header(None),
+        x_tagtog_project: str = Header(None),
+        x_tagtog_member: str = Header(""),
+        x_tagtog_docid: str = Header(None),
+        x_tagtog_jobid: str = Header(None)):
+
+    print(username, password)
 
     info = Info(
         owner=x_tagtog_owner,
@@ -99,6 +104,6 @@ async def will_annotate_document(x_tagtog_webhookid: str = Header(None),
     )
 
     logger.info(x_tagtog_webhookid)
-    asyncio.create_task(async_annotate(info))
+    asyncio.create_task(async_annotate(username, password, info))
 
     return
