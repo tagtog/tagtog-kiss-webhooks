@@ -92,8 +92,6 @@ async def will_annotate_document(
         x_tagtog_docid: str = Header(None),
         x_tagtog_jobid: str = Header(None)):
 
-    print(username, password)
-
     info = Info(
         owner=x_tagtog_owner,
         project=x_tagtog_project,
