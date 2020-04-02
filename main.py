@@ -21,20 +21,19 @@ logger = logging.getLogger(__name__)
 
 TAGTOG_DOMAIN = "https://localhost:9443/"
 TAGTOG_SSL_CERTIFICATE = False
-HARDCODED_PASSWORD_FOR_ALL = "yourPassword"
 
 
 # -----------------------------------------------------------------------------
 
 
-class Info(BaseModel):
+class AsyncAnnotateParams(BaseModel):
     owner: str
     project: str
     member: str
     webhookid: str
     docid: str
     jobid: str
-    format: str = "ann.json"
+    format: str = None
 
 
 # -----------------------------------------------------------------------------
@@ -58,7 +57,7 @@ async def success_async_annotate(username: str, password: str, info: Info):
 
     res = requests.post(
         TAGTOG_DOMAIN + endpoint,
-        auth=HTTPBasicAuth(info.owner, HARDCODED_PASSWORD_FOR_ALL),
+        auth=HTTPBasicAuth(username, password),
         verify=TAGTOG_SSL_CERTIFICATE,
         params=info,
         json=return_empty_annotations())
