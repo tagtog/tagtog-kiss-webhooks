@@ -10,10 +10,12 @@
 ```shell
 # Prepare the virtualenv
 pipenv --python $(pyenv which python)
+
 # Enter in the shell
 pipenv shell
+
 # Install all dependencies
-pipenv sync
+pipenv sync  # (or if you are developing: pipenv install)
 ```
 
 ## Run
