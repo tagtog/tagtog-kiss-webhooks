@@ -53,7 +53,7 @@ def return_empty_annotations():
 async def success_async_annotate(username: str, password: str, info: AsyncAnnotateParams):
     logger.info(f"start success_async_annotate: {info}")
     await asyncio.sleep(5)  # Wait some time to simulate a real ML prediction
-    endpoint = "-api/documents/jobs/v1/success-async-annotate"
+    endpoint = "-api/documents/jobs/v0/success-async-annotate"
 
     res = requests.post(
         TAGTOG_DOMAIN + endpoint,
@@ -68,7 +68,7 @@ async def success_async_annotate(username: str, password: str, info: AsyncAnnota
 async def failure_async_annotate(username: str, password: str, info: AsyncAnnotateParams, error: str):
     logger.info(f"start failure_async_annotate: {info}")
     await asyncio.sleep(5)  # Wait some time to simulate a real ML prediction with error
-    endpoint = "-api/documents/jobs/v1/failure-async-annotate"
+    endpoint = "-api/documents/jobs/v0/failure-async-annotate"
 
     res = requests.post(
         TAGTOG_DOMAIN + endpoint,
