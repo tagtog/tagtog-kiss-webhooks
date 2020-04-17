@@ -74,8 +74,11 @@ async def failure_async_annotate(username: str, password: str, info: AsyncAnnota
         TAGTOG_DOMAIN + endpoint,
         auth=HTTPBasicAuth(username, password),
         verify=TAGTOG_SSL_CERTIFICATE,
-        params=info,
-        data=error)
+        params=params,
+        data=error.encode("UTF-8"),
+        headers={
+            "Content-type": "text/html; charset=UTF-8"
+        })
 
     logger.info(f"end failure_async_annotate: {res.status_code} {res.text}")
 
