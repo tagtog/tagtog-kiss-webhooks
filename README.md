@@ -1,5 +1,10 @@
 # tagtog-kiss-webhooks
 
+The **tagtog async webhooks** are a new WIP feature. It will be soon [publicly launched](https://docs.tagtog.net/updates.html).
+
+This project provides a simple sample [web server](main.py) to interact with the tagtog webhooks.
+
+
 ## Requirements
 
 * Python 3.8+ (you can get this with [pyenv](https://github.com/pyenv/pyenv) as in: `pyenv install 3.8.2`)
@@ -8,6 +13,9 @@
 ## Install
 
 ```shell
+# Clone this repository in a local folder of yours
+git clone https://github.com/tagtog/tagtog-kiss-webhooks.git
+
 # Prepare the virtualenv
 pipenv --python $(pyenv which python)
 
