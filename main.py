@@ -1,3 +1,4 @@
+import os
 import asyncio
 import logging
 # import json
@@ -19,7 +20,8 @@ logger = logging.getLogger(__name__)
 # -----------------------------------------------------------------------------
 
 
-TAGTOG_DOMAIN = "https://localhost:9443/"
+TAGTOG_DOMAIN = os.environ.get("TAGTOG_DOMAIN", "https://www.tagtog.net")
+print(f"tagtog domain: {TAGTOG_DOMAIN}")
 TAGTOG_SSL_CERTIFICATE = False
 
 
