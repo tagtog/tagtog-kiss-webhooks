@@ -39,7 +39,7 @@ After this, the web server will be running on: http://localhost:8000
 
 # 💡 Endpoints
 
-Once you have the web server running, you can define the following endpoints in: your tagtog project --> Settings --> Webhooks
+Once you have the web server running, you can define the following endpoints in: your tagtog project → Settings → Webhooks
 
 
 ## will-annotate-document
