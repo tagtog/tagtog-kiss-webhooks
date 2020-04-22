@@ -1,4 +1,4 @@
-# ✨ tagtog-kiss-webhooks 
+# ✨ tagtog-kiss-webhooks
 
 The **tagtog async webhooks** are a new WIP feature. It will be soon [publicly launched](https://docs.tagtog.net/updates.html).
 
@@ -38,6 +38,9 @@ After this, the web server will be running on: http://localhost:8000
 
 
 # 💡 Endpoints
+
+Once you have the web server running, you can define the following endpoints in: your tagtog project --> Settings --> Webhooks
+
 
 ## will-annotate-document
 
