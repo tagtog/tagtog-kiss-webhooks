@@ -37,7 +37,7 @@ After this, the web server will be running on: http://localhost:8000
 
   Where `{username}` and `{password}` are the credentials of the tagtog user making the request. For example, these can be the credentials of the project's owner.
 
-### Parameters
+### Query Parameters
 
 * **error**: (optional; default=null) set this value ([url encoded](https://www.urlencoder.org)) with your own error message if you want the server to eventually communicate tagtog of an error in the annotation (that is, call the endpoint `failure-async-annotate`). If you leave this parameter unset, the default is for the server to send some (dummy) annotations to `success-async-annotate`.
 * **delaySeconds**: (optional; default=5) delay in seconds for when the server will eventually communicate tagtog of `success-async-annotate`/`failure-async-annotate`
