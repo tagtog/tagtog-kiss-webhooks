@@ -1,16 +1,16 @@
-# tagtog-kiss-webhooks
+# ✨ tagtog-kiss-webhooks 
 
 The **tagtog async webhooks** are a new WIP feature. It will be soon [publicly launched](https://docs.tagtog.net/updates.html).
 
 This project provides a simple sample [web server](main.py) to interact with the tagtog webhooks.
 
 
-## Requirements
+## 📝 Requirements
 
 * Python 3.8+ (you can get this with [pyenv](https://github.com/pyenv/pyenv) as in: `pyenv install 3.8.2`)
 * [pipenv](https://github.com/pypa/pipenv)
 
-## Install
+## ☕️ Install
 
 ```shell
 # Clone this repository in a local folder of yours
@@ -26,7 +26,7 @@ pipenv shell
 pipenv sync  # (or if you are developing: pipenv install)
 ```
 
-## Run
+## 🤗 Run
 
 ```shell
 pipenv shell  # Unnecessary if you are already in the virtual shell
@@ -37,7 +37,7 @@ uvicorn main:app --reload
 After this, the web server will be running on: http://localhost:8000
 
 
-# Endpoints
+# 💡 Endpoints
 
 ## will-annotate-document
 
