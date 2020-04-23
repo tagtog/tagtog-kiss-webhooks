@@ -21,7 +21,11 @@ logger = logging.getLogger(__name__)
 
 
 TAGTOG_DOMAIN = os.environ.get("TAGTOG_DOMAIN", "https://www.tagtog.net")
+if not TAGTOG_DOMAIN.endswith("/"):
+    TAGTOG_DOMAIN += "/"
+
 print(f"tagtog domain: {TAGTOG_DOMAIN}")
+
 TAGTOG_SSL_CERTIFICATE = False
 
 
