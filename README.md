@@ -7,7 +7,7 @@ This project provides a simple sample [web server](main.py) to interact with the
 
 ## 📝 Requirements
 
-* [Python 3.8+](https://www.python.org/downloads/) (you can get this with [pyenv](https://github.com/pyenv/pyenv), as in: `pyenv install 3.8.5`)
+* [Python 3.8+](https://www.python.org/downloads/) (you can get this with [pyenv](https://github.com/pyenv/pyenv), as in: `pyenv install 3.8.6`)
 * [pipenv](https://github.com/pypa/pipenv)
 
 ## ☕️ Install
